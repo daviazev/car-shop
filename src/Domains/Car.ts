@@ -1,4 +1,4 @@
-import Icar from '../Interfaces/Icar';
+import ICar from '../Interfaces/ICar';
 
 class Car {
   private _id: string | undefined;
@@ -10,7 +10,7 @@ class Car {
   private _doorsQty: number;
   private _seatsQty: number;
 
-  constructor(carInfo: Icar) {
+  constructor(carInfo: ICar) {
     this._id = carInfo.id;
     this._model = carInfo.model;
     this._year = carInfo.year;
