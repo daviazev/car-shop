@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { Model, models, Schema, model } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 
@@ -27,6 +28,11 @@ class CarODM {
   public async findCars(): Promise<ICar[]> {
     const allCars = await this.model.find({}, { __v: false });
     return allCars;
+  }
+
+  public async findCarById(id: string): Promise<ICar[]> {
+    const car = await this.model.find({ _id: id }, { __v: false });
+    return car;
   }
 }
 
