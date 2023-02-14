@@ -24,7 +24,7 @@ class CarController {
 
     try {
       const newCar = await this.service.createCarService(car);
-      return this.res.status(200).json(newCar);
+      return this.res.status(201).json(newCar);
     } catch (error) {
       return this.res.status(500).json({ message: 'erro interno' });
     }

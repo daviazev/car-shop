@@ -1,88 +1,88 @@
 import ICar from '../Interfaces/ICar';
 
 class Car {
-  private _id: string | undefined;
-  private _model: string;
-  private _year: number;
-  private _color: string;
-  private _status: boolean | undefined;
-  private _buyValue: number;
-  private _doorsQty: number;
-  private _seatsQty: number;
+  private id: string | undefined;
+  private model: string;
+  private year: number;
+  private color: string;
+  private status: boolean | undefined;
+  private buyValue: number;
+  private doorsQty: number;
+  private seatsQty: number;
 
   constructor(carInfo: ICar) {
-    this._id = carInfo.id;
-    this._model = carInfo.model;
-    this._year = carInfo.year;
-    this._color = carInfo.color;
-    this._status = carInfo.status;
-    this._buyValue = carInfo.buyValue;
-    this._doorsQty = carInfo.doorsQty;
-    this._seatsQty = carInfo.seatsQty;
+    this.id = carInfo.id;
+    this.model = carInfo.model;
+    this.year = carInfo.year;
+    this.color = carInfo.color;
+    this.status = carInfo.status;
+    this.buyValue = carInfo.buyValue;
+    this.doorsQty = carInfo.doorsQty;
+    this.seatsQty = carInfo.seatsQty;
   }
 
   getId() {
-    return this._id;
+    return this.id;
   }
 
   setId(id: string) {
-    this._id = id;
+    this.id = id;
   }
 
   getModel() {
-    return this._model;
+    return this.model;
   }
 
   setModel(model: string) {
-    this._model = model;
+    this.model = model;
   }
 
   getYear() {
-    return this._year;
+    return this.year;
   }
 
   setYear(year: number) {
-    this._year = year;
+    this.year = year;
   }
 
   getColor() {
-    return this._color;
+    return this.color;
   }
 
   setColor(color: string) {
-    this._color = color;
+    this.color = color;
   }
 
   getStatus() {
-    return this._status;
+    return this.status;
   }
 
   setStatus(status: boolean) {
-    this._status = status;
+    this.status = status;
   }
 
   getBuyValue() {
-    return this._buyValue;
+    return this.buyValue;
   }
 
   setBuyValue(value: number) {
-    this._buyValue = value;
+    this.buyValue = value;
   }
 
   getDoorsQty() {
-    return this._doorsQty;
+    return this.doorsQty;
   }
 
   setDoorsQyt(qty: number) {
-    this._doorsQty = qty;
+    this.doorsQty = qty;
   }
 
   getSeatsQty() {
-    return this._seatsQty;
+    return this.seatsQty;
   }
 
   setSeatsQty(qty: number) {
-    this._seatsQty = qty;
+    this.seatsQty = qty;
   }
 }
 

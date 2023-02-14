@@ -4,8 +4,8 @@ import Car from '../Domains/Car';
 
 class CarService {
   private createCarDomain(car: ICar | null): Car | null {
-    if (car) {
-      return new Car({ ...car });
+    if (car) {  
+      return new Car(car);
     }
 
     return null;
