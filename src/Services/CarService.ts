@@ -13,26 +13,26 @@ class CarService {
 
   public async createCarService(car: ICar) {
     const carODM = new CarODM();
-    const newCar = await carODM.createCar(car);
+    const newCar = await carODM.create(car);
     if (this.createCarDomain(newCar) === null) throw Error('Invalid car information');
     return this.createCarDomain(newCar);
   }
 
   public async findCarsService() {
     const carODM = new CarODM();
-    const allCars = await carODM.findCars();
+    const allCars = await carODM.find();
     return allCars.map((doc) => this.createCarDomain(doc));
   }
 
   public async findCarByIdService(id: string) {
     const carODM = new CarODM();
-    const car = await carODM.findCarById(id);
+    const car = await carODM.findById(id);
     return car.map((doc) => this.createCarDomain(doc));
   }
 
   public async updateCarService(id: string, car: Partial<ICar>) {
     const carODM = new CarODM();
-    const carToUpdate = await carODM.updateCar(id, car);
+    const carToUpdate = await carODM.update(id, car);
     return this.createCarDomain(carToUpdate);
   }
 }
