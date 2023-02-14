@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { Model, models, Schema, model } from 'mongoose';
+import { Model, models, Schema, model, isValidObjectId } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 
 class CarODM {
@@ -31,6 +31,7 @@ class CarODM {
   }
 
   public async findCarById(id: string): Promise<ICar[]> {
+    if (!isValidObjectId(id)) throw Error('Invalid Mongo id');
     const car = await this.model.find({ _id: id }, { __v: false });
     return car;
   }

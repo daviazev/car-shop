@@ -14,6 +14,7 @@ class CarService {
   public async createCarService(car: ICar) {
     const carODM = new CarODM();
     const newCar = await carODM.createCar(car);
+    if (this.createCarDomain(newCar) === null) throw Error('Invalid car information');
     return this.createCarDomain(newCar);
   }
 
