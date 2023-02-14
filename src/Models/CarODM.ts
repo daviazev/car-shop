@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { Model, models, Schema, model, isValidObjectId } from 'mongoose';
+import { Model, models, Schema, model, isValidObjectId, UpdateQuery } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 
 class CarODM {
@@ -34,6 +34,18 @@ class CarODM {
     if (!isValidObjectId(id)) throw Error('Invalid Mongo id');
     const car = await this.model.find({ _id: id }, { __v: false });
     return car;
+  }
+
+  public async updateCar(_id: string, car: Partial<ICar>) {
+    if (!isValidObjectId(_id)) throw Error('Invalid Mongo id');
+
+    const updatedCar = await this.model.findByIdAndUpdate(
+      { _id },
+      { ...car } as UpdateQuery<ICar>,
+      { new: true },
+    );
+
+    return updatedCar;
   }
 }
 

@@ -61,3 +61,21 @@ export const carById: ICar[] = [
 export const validId = '634852326b35b59438fbea31';
 
 export const invalidId = '634852326b35b59438fxablau';
+
+export const udpateOutput = {
+  acknowledged: true,
+  insertedId: 1,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 1,
+};
+
+export const carToUpdate: ICar = {
+  model: 'Tempra',
+  year: 1995,
+  color: 'White',
+  status: false,
+  buyValue: 39,
+  doorsQty: 2,
+  seatsQty: 5,
+};
