@@ -61,7 +61,6 @@ class CarController {
  
     try {
       const car = await this.service.updateCarService(id, body);
-      console.log('>>>>>>>>>>>>>', car);
       
       if (car === null) return this.res.status(404).json({ message: 'Car not found' });
 
