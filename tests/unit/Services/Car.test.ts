@@ -5,7 +5,16 @@ import { expect } from 'chai';
 import CarService from '../../../src/Services/CarService';
 // import Car from '../../../src/Domains/Car';
 
-import { carInput, carOutput, allCars, carById, validId, invalidId } from './mocks';
+import { 
+  carInput,
+  carOutput,
+  allCars,
+  carById,
+  validId,
+  invalidId,
+  carUpdatedInfos,
+  carUpdated,
+} from './mocks';
 
 describe('Testes para camada service - CarService', function () {
   afterEach(sinon.restore);
@@ -53,6 +62,15 @@ describe('Testes para camada service - CarService', function () {
       } catch (error) {
         expect((error as Error).message).to.be.equal('Invalid Mongo id');
       }
+    });
+  });
+
+  describe('Atualização de um carro', function () {
+    it('Deve atualizar um veículo com sucesso', async function () {
+      sinon.stub(Model, 'findOneAndUpdate').resolves(carUpdated);
+      const service = new CarService();
+      const result = await service.updateCarService(validId, carUpdatedInfos);
+      expect(result).to.be.deep.equal(carUpdated);
     });
   });
 });

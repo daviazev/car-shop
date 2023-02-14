@@ -70,12 +70,23 @@ export const udpateOutput = {
   upsertedCount: 1,
 };
 
-export const carToUpdate: ICar = {
-  model: 'Tempra',
-  year: 1995,
-  color: 'White',
-  status: false,
-  buyValue: 39,
+export const carUpdatedInfos: ICar = {
+  model: 'Camaro',
+  year: 2016,
+  color: 'Yellow',
+  status: true,
+  buyValue: 300000,
   doorsQty: 2,
-  seatsQty: 5,
+  seatsQty: 2,
+};
+
+export const carUpdated: ICar = {
+  id: '634852326b35b59438fbea31',
+  model: 'Camaro',
+  year: 2016,
+  color: 'Yellow',
+  status: true,
+  buyValue: 300000,
+  doorsQty: 2,
+  seatsQty: 2,
 };
