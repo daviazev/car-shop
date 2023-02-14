@@ -31,6 +31,15 @@ class CarController {
       return this.res.status(500).json({ message: 'erro interno' });
     }
   }
+
+  public async findCarsController() {
+    try {
+      const allCars = await this.service.findCarsService();
+      return this.res.status(201).json(allCars);
+    } catch (error) {
+      return this.res.status(500).json({ message: 'erro interno' });
+    }
+  }
 }
 
 export default CarController;
