@@ -1,9 +1,7 @@
 import { Model } from 'mongoose';
 import sinon from 'sinon';
 import { expect } from 'chai';
-// import ICar from '../../../src/Interfaces/ICar';
 import CarService from '../../../src/Services/CarService';
-// import Car from '../../../src/Domains/Car';
 
 import { 
   carInput,
@@ -14,7 +12,7 @@ import {
   invalidId,
   carUpdatedInfos,
   carUpdated,
-} from './mocks';
+} from './mocks/car.mocks';
 
 describe('Testes para camada service - CarService', function () {
   afterEach(sinon.restore);

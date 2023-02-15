@@ -62,14 +62,6 @@ export const validId = '634852326b35b59438fbea31';
 
 export const invalidId = '634852326b35b59438fxablau';
 
-export const udpateOutput = {
-  acknowledged: true,
-  insertedId: 1,
-  matchedCount: 1,
-  modifiedCount: 1,
-  upsertedCount: 1,
-};
-
 export const carUpdatedInfos: ICar = {
   model: 'Camaro',
   year: 2016,
